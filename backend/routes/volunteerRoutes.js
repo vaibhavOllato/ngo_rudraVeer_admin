@@ -1,17 +1,18 @@
 import express from "express";
-// import upload from "../middlewares/multer.js";
 import upload from "../middlewares/multer.js";
 
 import {
   createVolunteer,
   getAllVolunteers,
-  updateVolunteerStatus
+  getAllPendingApplications,
+  approveVolunteer,
 } from "../controllers/volunteerController.js";
 
 const router = express.Router();
 
 router.post("/", upload.single("profilePicture"), createVolunteer);
 router.get("/", getAllVolunteers);
-router.patch("/:id/status", updateVolunteerStatus);
+router.get("/pending", getAllPendingApplications); // ✅ Add this line
+router.post("/:id/approve", approveVolunteer); // Use POST for approval action
 
 export default router;

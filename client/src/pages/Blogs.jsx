@@ -146,10 +146,11 @@ const Blogs = () => {
   }, []);
 
   return (
-    <div className="min-h-screen py-6 px-3">
+    // <div className="min-h-screen py-6 px-3">
+    <div className="space-y-6 ">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
         <div className="bg-white/70 backdrop-blur-lg p-5 rounded-2xl border border-white/40 shadow-md h-fit sticky top-6">
-          <h2 className="text-2xl font-bold text-gray-800 mb-4 flex items-center gap-2">
+          <h2 className="text-xl font-bold text-[#FF5E3A] mb-4 flex items-center gap-2">
             <FaPenFancy className="text-[#FF5E3A]" />
             New Blog
           </h2>
@@ -208,7 +209,7 @@ const Blogs = () => {
         </div>
 
         <div className="space-y-4">
-          <h2 className="text-2xl font-bold text-gray-800 mb-2">
+          <h2 className="text-xl font-bold text-[#FF5E3A] mb-2">
             Latest Blogs
           </h2>
           {blogs.length === 0 ? (
@@ -223,7 +224,7 @@ const Blogs = () => {
               >
                 <div className="flex justify-between items-start">
                   <h3
-                    className="text-xl font-semibold text-gray-900 mb-2 cursor-pointer"
+                    className="text-xl font-semibold text-[#1C1F1D] mb-2 cursor-pointer"
                     onClick={() => {
                       setSelectedBlog(blog);
                       setIsEditMode(false); // 👈 for viewing

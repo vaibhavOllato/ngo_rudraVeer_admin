@@ -6,6 +6,7 @@ export default {
       colors: {
         charcoal: "#1C1F1D",
         coral: "#FF5E3A",
+        coralHover:"#e14f2e",
         mint: "#A3F7BF",
       },
       animation: {

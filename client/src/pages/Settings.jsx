@@ -1,20 +1,22 @@
-import React, { useState } from 'react';
-import { FaUser, FaEnvelope, FaLock, FaSave } from 'react-icons/fa';
+import React, { useState } from "react";
+import { FaUser, FaEnvelope, FaLock, FaSave } from "react-icons/fa";
 
 const Settings = () => {
-  const [name, setName] = useState('Vaibhav');
-  const [email, setEmail] = useState('vaibhav@example.com');
-  const [password, setPassword] = useState('');
+  const [name, setName] = useState("Vaibhav");
+  const [email, setEmail] = useState("vaibhav@example.com");
+  const [password, setPassword] = useState("");
 
   const handleSave = () => {
     // Logic to save settings (e.g., API call)
-    alert('Settings saved!');
+    alert("Settings saved!");
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-100 to-blue-100 py-10 px-4">
+    <div className="min-h-screen  py-10 px-4">
       <div className="max-w-xl mx-auto bg-white/70 backdrop-blur-lg p-6 rounded-2xl shadow-xl border border-white/30 space-y-6">
-        <h2 className="text-2xl font-bold text-gray-800 mb-2">Account Settings</h2>
+        <h2 className="text-xl font-bold text-gray-800 mb-2">
+          Account Settings
+        </h2>
 
         {/* Name */}
         <div className="space-y-1">

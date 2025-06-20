@@ -27,10 +27,10 @@ export default function Volunteers() {
   );
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-6">
       {/* Top */}
       <div className="flex items-center justify-between flex-wrap gap-3">
-        <h1 className="text-xl font-semibold text-gray-800">Volunteers</h1>
+        <h1 className="text-xl font-bold text-gray-800">Volunteers</h1>
 
         <div className="flex gap-2 items-center">
           <input

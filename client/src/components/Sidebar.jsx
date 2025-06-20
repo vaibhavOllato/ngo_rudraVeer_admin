@@ -7,6 +7,8 @@ import {
   FaCog,
   FaUserCircle,
   FaRegNewspaper,
+  FaCalendarCheck,
+  FaDonate,
 } from "react-icons/fa";
 
 const navItems = [
@@ -14,8 +16,13 @@ const navItems = [
   { label: "Blogs", path: "/blogs", icon: <FaRegNewspaper /> },
   { label: "Problems", path: "/problems", icon: <FaTasks /> },
   { label: "Volunteers", path: "/volunteers", icon: <FaUsers /> },
-  { label: "Reports", path: "/reports", icon: <FaFileAlt /> },
-  // { label: "Settings", path: "/settings", icon: <FaCog /> },
+  { label: "Donation", path: "/donation", icon: <FaDonate /> },
+  { label: "Events", path: "/events", icon: <FaCalendarCheck /> },
+  {
+    label: "Pending Volunteers",
+    path: "/pending-volunteer",
+    icon: <FaFileAlt />,
+  },
 ];
 
 export default function Sidebar() {
@@ -25,21 +32,13 @@ export default function Sidebar() {
     <div className="bg-[#1C1F1D] text-[#F9F9F9] w-64 min-h-screen flex flex-col px-5 py-6 shadow-xl">
       {/* Branding */}
       <div className="mb-6 text-center">
-        <h1 className="text-2xl font-bold text-[#FF5E3A]">HelpDeskNGO</h1>
+        <h1 className="text-2xl font-bold text-[#FF5E3A]">RudraVeer</h1>
         <p className="text-xs text-[#9CA3AF] mt-1 tracking-wider">
           Admin Control
         </p>
       </div>
 
       {/* User Profile */}
-      {/* <div className="flex items-center gap-3 p-3 mb-6 rounded-lg bg-[#262926] hover:bg-[#2F322F] transition duration-200 shadow">
-        <FaUserCircle className="text-3xl text-[#A3F7BF]" />
-        <div>
-          <p className="text-sm font-semibold">Admin</p>
-          <p className="text-xs text-[#9CA3AF]">Settings</p>
-        </div>
-      </div> */}
-
       <Link
         to="/settings"
         className="flex items-center gap-3 p-3 mb-6 rounded-lg bg-[#262926] hover:bg-[#2F322F] transition duration-200 shadow"
@@ -74,7 +73,7 @@ export default function Sidebar() {
 
       {/* Footer */}
       <div className="mt-auto text-xs text-center text-[#6B7280] pt-6 border-t border-[#333]">
-        &copy; 2025 HelpDesk NGO
+        &copy; 2025 RudraVeer.NGO
       </div>
     </div>
   );

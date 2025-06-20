@@ -7,6 +7,10 @@ import mongoose from "mongoose";
 import authRoutes from "./routes/authRoutes.js";
 import volunteerRoutes from "./routes/volunteerRoutes.js";
 import blogRoutes from "./routes/blogRoutes.js";
+import contactRoutes from './routes/contactRoutes.js';
+import donationRoutes from './routes/donationRoutes.js';
+import eventRoutes from './routes/eventRoutes.js';
+
 
 dotenv.config();
 
@@ -22,6 +26,10 @@ app.use("/uploads", express.static("uploads"));
 app.use("/api/admin", authRoutes);
 app.use("/api/volunteers", volunteerRoutes);
 app.use("/api/blogs", blogRoutes);
+app.use('/api/problem', contactRoutes);
+app.use('/api/donations', donationRoutes);
+app.use('/api/events', eventRoutes);
+
 
 // MongoDB connection
 mongoose

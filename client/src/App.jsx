@@ -1,5 +1,4 @@
 import { Routes, Route, Navigate } from "react-router-dom";
-// import { Routes, Route } from "react-router-dom";
 import Layout from "./layouts/Layout";
 import Dashboard from "./pages/Dashboard";
 import Problems from "./pages/Problems";
@@ -10,9 +9,12 @@ import Login from "./auth/Login";
 import Register from "./auth/Register";
 import PrivateRoute from "./route/PrivateRoute";
 import VolunteerApprovalPanel from "./components/VolunteerApprovalPanel";
+import Blogs from "./pages/Blogs";
+import { NotificationProvider } from "./context/NotificationProvider";
 
 function App() {
   return (
+        <NotificationProvider>
     <Routes>
       {/* Public Routes */}
       <Route path="/login" element={<Login />} />
@@ -21,31 +23,19 @@ function App() {
       {/* Redirect root path to dashboard */}
       <Route path="/" element={<Navigate to="/dashboard" replace />} />
 
-      {/* Optional redirects for clarity */}
-      <Route
-        path="/volunteers"
-        element={<Navigate to="/dashboard/volunteers" replace />}
-      />
-      <Route
-        path="/problems"
-        element={<Navigate to="/dashboard/problems" replace />}
-      />
-      <Route
-        path="/reports"
-        element={<Navigate to="/dashboard/reports" replace />}
-      />
-
-      {/* Protected Routes */}
+      {/* Protected Routes under common layout */}
       <Route element={<PrivateRoute />}>
-        <Route path="/dashboard" element={<Layout />}>
-          <Route index element={<Dashboard />} />
-          <Route path="problems" element={<Problems />} />
-          <Route path="volunteers" element={<Volunteers />} />
-          <Route path="reports" element={<VolunteerApprovalPanel />} />
-          <Route path="settings" element={<Settings />} />
+        <Route element={<Layout />}>
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/problems" element={<Problems />} />
+          <Route path="/volunteers" element={<Volunteers />} />
+          <Route path="/reports" element={<VolunteerApprovalPanel />} />
+          <Route path="/blogs" element={<Blogs />} />
+          <Route path="/settings" element={<Settings />} />
         </Route>
       </Route>
     </Routes>
+    </NotificationProvider>
   );
 }
 

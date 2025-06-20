@@ -1,10 +1,12 @@
 import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
+
 import mongoose from "mongoose";
 // import authRoutes from './routes/authRoutes.js';
 import authRoutes from "./routes/authRoutes.js";
 import volunteerRoutes from "./routes/volunteerRoutes.js";
+import blogRoutes from "./routes/blogRoutes.js";
 
 dotenv.config();
 
@@ -19,6 +21,7 @@ app.use("/uploads", express.static("uploads"));
 // Routes
 app.use("/api/admin", authRoutes);
 app.use("/api/volunteers", volunteerRoutes);
+app.use("/api/blogs", blogRoutes);
 
 // MongoDB connection
 mongoose

@@ -6,14 +6,16 @@ import {
   FaFileAlt,
   FaCog,
   FaUserCircle,
+  FaRegNewspaper,
 } from "react-icons/fa";
 
 const navItems = [
   { label: "Dashboard", path: "/dashboard", icon: <FaTachometerAlt /> },
+  { label: "Blogs", path: "/blogs", icon: <FaRegNewspaper /> },
   { label: "Problems", path: "/problems", icon: <FaTasks /> },
   { label: "Volunteers", path: "/volunteers", icon: <FaUsers /> },
   { label: "Reports", path: "/reports", icon: <FaFileAlt /> },
-  { label: "Settings", path: "/settings", icon: <FaCog /> },
+  // { label: "Settings", path: "/settings", icon: <FaCog /> },
 ];
 
 export default function Sidebar() {
@@ -21,21 +23,33 @@ export default function Sidebar() {
 
   return (
     <div className="bg-[#1C1F1D] text-[#F9F9F9] w-64 min-h-screen flex flex-col px-5 py-6 shadow-xl">
-      
       {/* Branding */}
       <div className="mb-6 text-center">
         <h1 className="text-2xl font-bold text-[#FF5E3A]">HelpDeskNGO</h1>
-        <p className="text-xs text-[#9CA3AF] mt-1 tracking-wider">Admin Control</p>
+        <p className="text-xs text-[#9CA3AF] mt-1 tracking-wider">
+          Admin Control
+        </p>
       </div>
 
       {/* User Profile */}
-      <div className="flex items-center gap-3 p-3 mb-6 rounded-lg bg-[#262926] hover:bg-[#2F322F] transition duration-200 shadow">
+      {/* <div className="flex items-center gap-3 p-3 mb-6 rounded-lg bg-[#262926] hover:bg-[#2F322F] transition duration-200 shadow">
         <FaUserCircle className="text-3xl text-[#A3F7BF]" />
         <div>
           <p className="text-sm font-semibold">Admin</p>
           <p className="text-xs text-[#9CA3AF]">Settings</p>
         </div>
-      </div>
+      </div> */}
+
+      <Link
+        to="/settings"
+        className="flex items-center gap-3 p-3 mb-6 rounded-lg bg-[#262926] hover:bg-[#2F322F] transition duration-200 shadow"
+      >
+        <FaUserCircle className="text-3xl text-[#A3F7BF]" />
+        <div>
+          <p className="text-sm font-semibold">Admin</p>
+          <p className="text-xs text-[#9CA3AF]">Settings</p>
+        </div>
+      </Link>
 
       {/* Navigation */}
       <nav className="flex flex-col gap-2">
